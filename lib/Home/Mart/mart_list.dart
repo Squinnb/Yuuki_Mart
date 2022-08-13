@@ -21,11 +21,14 @@ class MartList extends StatelessWidget {
 
         return ListTile(
             title: Text(mart.name),
-            leading: const Text(" ( ͡° ͜ʖ ͡°)"),
+            leading: Hero(
+              tag: mart.name,
+              child: Image.asset(
+                "Images/MartType/${mart.type}.png",
+                width: MediaQuery.of(context).size.width / 12,
+              ),
+            ),
             onTap: () {
-              // Navigate to the details page. If the user leaves and returns to
-              // the app after it has been killed while running in the
-              // background, the navigation stack is restored.
               Navigator.pushNamed(context, MartDetails.id, arguments: mart);
             });
       },

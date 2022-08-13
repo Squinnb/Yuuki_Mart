@@ -19,15 +19,15 @@ class MartInfo extends StatelessWidget {
     return Padding(
       // ignore: prefer_const_constructors
       padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: () {
-              switchViewing();
-            },
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 9.0),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                switchViewing();
+              },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(
@@ -39,12 +39,25 @@ class MartInfo extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Text(
-            mart.desc,
-          ),
-          if (mart.isChain) Text("Location: ${mart.chainLoc!}"),
-        ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 6.0, 0.0, 5.0),
+              child: Row(children: [
+                Hero(
+                  tag: mart.name,
+                  child: Image.asset(
+                    "Images/MartType/${mart.type}.png",
+                    width: MediaQuery.of(context).size.width / 12,
+                  ),
+                ),
+                Text(" ${mart.type}")
+              ]),
+            ),
+            Text(
+              mart.desc,
+            ),
+            if (mart.isChain) Text("Location: ${mart.chainLoc!}"),
+          ],
+        ),
       ),
     );
   }

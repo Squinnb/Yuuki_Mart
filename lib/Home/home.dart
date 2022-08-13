@@ -27,12 +27,30 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: AppBar(
+        elevation: 0,
         title: Text(selectedStage),
         backgroundColor: Colors.transparent,
       ),
       body: stage[selectedStage],
-      bottomNavigationBar: BottomNavBar(setStage),
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.all(0.0),
+        padding: EdgeInsets.all(0.0),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: knavColor,
+            width: 5.0,
+          ),
+          color: knavColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(17.0),
+            topRight: Radius.circular(17.0),
+          ),
+        ),
+        child: BottomNavBar(setStage),
+      ),
     );
   }
 }

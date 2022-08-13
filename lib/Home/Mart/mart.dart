@@ -3,20 +3,26 @@
 
 import 'package:flutter/material.dart';
 
-enum MartType { grocery, restaraunt, farmer }
+// enum MartType { grocery, restaraunt, farmer }
+
+// Map<MartType, String> martType = {
+//   MartType.grocery: "Supermarket",
+//   MartType.restaraunt: "Restaraunt",
+//   MartType.farmer: "Farmer's Market",
+// };
 
 class Mart {
   String name;
   String desc;
   String island;
-  MartType type;
+  String type;
   bool isChain;
   String? chainLoc;
   Mart(
       {required this.name,
       required this.island,
       required this.desc,
-      this.type = MartType.grocery,
+      this.type = "Supermarket",
       this.isChain = false,
       this.chainLoc});
 }
@@ -50,18 +56,18 @@ class Marts extends ChangeNotifier {
           name: "Aoyama Farmer's Market",
           desc: "Farmer's market in Aoyama, at the United Nations university",
           island: "Honshu",
-          type: MartType.farmer),
+          type: "Farmer's Market"),
       Mart(
           name: "Chaya Macrobiotics",
           desc:
               "Organic food restaraunt, located in the Royal Park Hotel near Shiodome.",
           island: "Honshu",
-          type: MartType.restaraunt),
+          type: "Restaraunt"),
     ];
   }
   List<Mart> get marts => _marts;
 
-  List<Mart> martByType(MartType type) {
+  List<Mart> martByType(String type) {
     List<Mart> groceryMarts =
         _marts.where((Mart mart) => mart.type == type).toList();
     return groceryMarts;
