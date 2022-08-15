@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
 import '../../Shared/shared.dart';
-import 'Auth/auth.dart';
-import 'Mart/mart_list.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = "/";
@@ -12,10 +10,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Auth auth = Auth();
   Map stage = {
     "Home": const Home(),
     "Mart": MartList(),
-    "Auth": const Auth(),
+    "Auth": UserSett(),
   };
   String selectedStage = "Home";
   void setStage(String stageName) {
@@ -39,10 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
         margin: EdgeInsets.all(0.0),
         padding: EdgeInsets.all(0.0),
         decoration: BoxDecoration(
-          border: Border.all(
-            color: knavColor,
-            width: 5.0,
-          ),
           color: knavColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(17.0),

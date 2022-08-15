@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import './konstants.dart';
 
 class BottomNavBar extends StatefulWidget {
   final Function setStage;
-
   const BottomNavBar(this.setStage, {Key? key}) : super(key: key);
-
-  @override
   State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
@@ -30,15 +26,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   int selectedIndex = 0;
 
-  @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      elevation: 0,
-      backgroundColor: knavColor,
+      backgroundColor: Colors.transparent,
+      elevation: 0.0,
       type: BottomNavigationBarType.fixed,
       currentIndex: selectedIndex,
-      selectedItemColor: Color.fromARGB(255, 35, 35, 35),
-      unselectedItemColor: Color.fromARGB(255, 145, 145, 145),
+      selectedItemColor: Color.fromARGB(255, 0, 0, 0),
+      unselectedItemColor: Color.fromARGB(218, 86, 86, 86),
       onTap: (int i) {
         widget.setStage(body[i]);
         selectedIndex = i;
