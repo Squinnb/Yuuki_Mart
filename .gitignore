@@ -32,7 +32,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-
+/canIgnore/
+/canIgnore/*
 # Web related
 lib/generated_plugin_registrant.dart
 desktop/
@@ -46,4 +47,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-./canIgnore/
+/canIgnore/*
