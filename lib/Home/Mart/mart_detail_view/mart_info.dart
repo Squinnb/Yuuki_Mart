@@ -17,8 +17,7 @@ class MartInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // ignore: prefer_const_constructors
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -41,16 +40,25 @@ class MartInfo extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0, 6.0, 0.0, 5.0),
-              child: Row(children: [
-                Hero(
-                  tag: mart.name,
-                  child: Image.asset(
-                    "Images/MartType/${mart.type}.png",
-                    width: MediaQuery.of(context).size.width / 12,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Hero(
+                    tag: mart.name,
+                    child: Image.asset(
+                      "Images/MartType/${mart.type}.png",
+                      width: MediaQuery.of(context).size.width / 12,
+                    ),
                   ),
-                ),
-                Text(" ${mart.type}")
-              ]),
+                  Text(
+                    " ${mart.type}",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 223, 173, 241),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0),
+                  )
+                ],
+              ),
             ),
             Text(
               mart.desc,

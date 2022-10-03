@@ -1,0 +1,8 @@
+{
+  "appName": "Organic Mart",
+  "homeExplanation": "Organic denotes lack of pesticides.",
+  "settings": "Settings: ",
+  "@helloWorld": {
+    "description": "Hoho"
+  }
+}

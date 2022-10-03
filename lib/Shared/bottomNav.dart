@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yuuki_mart/Shared/konstants.dart';
 
 class BottomNavBar extends StatefulWidget {
   final Function setStage;
@@ -8,7 +9,6 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  List<String> body = ["Home", "Mart", "Auth"];
   Map<String, Icon> navIcons = {
     "Home": const Icon(
       FontAwesomeIcons.houseChimney,
@@ -18,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       FontAwesomeIcons.store,
       size: 20,
     ),
-    "Auth": const Icon(
+    "User": const Icon(
       FontAwesomeIcons.user,
       size: 20,
     ),
@@ -35,11 +35,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
       selectedItemColor: Color.fromARGB(255, 0, 0, 0),
       unselectedItemColor: Color.fromARGB(218, 86, 86, 86),
       onTap: (int i) {
-        widget.setStage(body[i]);
+        widget.setStage(kHomeStages[i]);
         selectedIndex = i;
       },
       items: <BottomNavigationBarItem>[
-        ...body.map((String b) {
+        ...kHomeStages.map((String b) {
           return BottomNavigationBarItem(
             icon: navIcons[b]!,
             label: b,

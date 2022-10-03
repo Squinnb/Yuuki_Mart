@@ -1,5 +1,9 @@
-import '../../Shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'Settings/settings.dart';
+import './Mart/mart_list.dart';
+import '../Shared/konstants.dart';
+import '../Shared/bottomNav.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = "/";
@@ -10,11 +14,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Auth auth = Auth();
   Map stage = {
     "Home": const Home(),
     "Mart": MartList(),
-    "Auth": UserSett(),
+    "User": UserSett(),
   };
   String selectedStage = "Home";
   void setStage(String stageName) {
@@ -55,10 +58,12 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Device language: ");
+    print(Localizations.localeOf(context));
     return Center(
       child: Container(
         margin: const EdgeInsets.all(20.0),
-        child: const Text("有機マートへようこそ\n\n Organicとは。。。"),
+        child: Text(AppLocalizations.of(context)!.appName),
       ),
     );
   }

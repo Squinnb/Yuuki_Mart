@@ -1,15 +1,6 @@
 // Organic Mart Class
 // import 'package:http/http.dart' as http;
-
 import 'package:flutter/material.dart';
-
-// enum MartType { grocery, restaraunt, farmer }
-
-// Map<MartType, String> martType = {
-//   MartType.grocery: "Supermarket",
-//   MartType.restaraunt: "Restaraunt",
-//   MartType.farmer: "Farmer's Market",
-// };
 
 class Mart {
   String name;
@@ -27,10 +18,10 @@ class Mart {
       this.chainLoc});
 }
 
-class Marts extends ChangeNotifier {
-  late List<Mart> _marts;
+class Marts {
+  late List<Mart> _martList;
   Marts() {
-    _marts = [
+    _martList = [
       Mart(
         name: "Natural Mart",
         island: "Honshu",
@@ -65,11 +56,11 @@ class Marts extends ChangeNotifier {
           type: "Restaraunt"),
     ];
   }
-  List<Mart> get marts => _marts;
+  List<Mart> get martList => _martList;
 
   List<Mart> martByType(String type) {
     List<Mart> groceryMarts =
-        _marts.where((Mart mart) => mart.type == type).toList();
+        _martList.where((Mart mart) => mart.type == type).toList();
     return groceryMarts;
   }
 }
