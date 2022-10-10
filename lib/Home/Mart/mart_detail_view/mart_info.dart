@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maps_launcher/maps_launcher.dart';
+
 import '../../../Store/mart.dart';
 
 class MartInfo extends StatelessWidget {
@@ -13,10 +13,6 @@ class MartInfo extends StatelessWidget {
   final String imgUrl;
   final Mart mart;
   final Function switchViewing;
-
-  void launchMart() {
-    MapsLauncher.launchQuery(mart.address);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +64,6 @@ class MartInfo extends StatelessWidget {
               mart.desc,
             ),
             if (mart.isChain) Text("Location: ${mart.chainLoc!}"),
-            FloatingActionButton(
-              onPressed: launchMart,
-            )
           ],
         ),
       ),
