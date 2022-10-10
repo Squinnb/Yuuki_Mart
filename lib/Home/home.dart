@@ -4,6 +4,7 @@ import 'Settings/settings.dart';
 import './Mart/mart_list.dart';
 import '../Shared/konstants.dart';
 import '../Shared/bottomNav.dart';
+import 'home_about.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = "/";
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Map stage = {
-    "Home": const Home(),
+    "Home": Home(),
     "Mart": MartList(),
     "User": UserSett(),
   };
@@ -54,16 +55,19 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
+  Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    print("Device language: ");
-    print(Localizations.localeOf(context));
     return Center(
-      child: Container(
-        margin: const EdgeInsets.all(20.0),
-        child: Text(AppLocalizations.of(context)!.appName),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            AppLocalizations.of(context)!.appName,
+            style: TextStyle(fontSize: 20.0, fontFamily: "Comfortaa"),
+          ),
+          HomeAbout(),
+        ],
       ),
     );
   }

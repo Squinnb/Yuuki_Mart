@@ -4,5 +4,7 @@
   "settings": "設定： ",
   "@helloWorld": {
     "description": "ほほ"
-  }
+  },
+  "organicLink": "オーガニックとは",
+  "navHome": "ホーム", "navMart": "マート", "navUser": "ユーザー"
 }

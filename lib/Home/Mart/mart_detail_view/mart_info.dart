@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../mart.dart';
+import 'package:maps_launcher/maps_launcher.dart';
+import '../../../Store/mart.dart';
 
 class MartInfo extends StatelessWidget {
   const MartInfo({
@@ -13,6 +13,10 @@ class MartInfo extends StatelessWidget {
   final String imgUrl;
   final Mart mart;
   final Function switchViewing;
+
+  void launchMart() {
+    MapsLauncher.launchQuery(mart.address);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,12 +50,12 @@ class MartInfo extends StatelessWidget {
                   Hero(
                     tag: mart.name,
                     child: Image.asset(
-                      "Images/MartType/${mart.type}.png",
+                      "Images/MartType/${mart.type.type}.png",
                       width: MediaQuery.of(context).size.width / 12,
                     ),
                   ),
                   Text(
-                    " ${mart.type}",
+                    " ${mart.type.type}",
                     style: TextStyle(
                         color: Color.fromARGB(255, 223, 173, 241),
                         fontWeight: FontWeight.bold,
@@ -64,6 +68,9 @@ class MartInfo extends StatelessWidget {
               mart.desc,
             ),
             if (mart.isChain) Text("Location: ${mart.chainLoc!}"),
+            FloatingActionButton(
+              onPressed: launchMart,
+            )
           ],
         ),
       ),

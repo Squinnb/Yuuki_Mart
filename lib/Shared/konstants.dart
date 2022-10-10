@@ -11,9 +11,10 @@ const Map<String, String> kCodeToText = {"en": "English", "ja": "日本語"};
 
 const List<Locale> kLocales = [Locale('en', 'US'), Locale('ja', 'JP')];
 
-const Map<String, String> langMap = {"English": "en", "日本語": "ja"};
-
-const List<String> kHomeStages = ["Home", "Mart", "User"];
+const Map<String, List<String>> kHomeStages = {
+  "en": ["Home", "Mart", "User"],
+  "ja": ["ホーム", "マート", "ユーザー"]
+};
 
 const List<String> kMartTypes = [
   "All",

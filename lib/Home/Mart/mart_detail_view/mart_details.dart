@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'full_photo.dart';
-import '../mart.dart';
+import '../../../Store/mart.dart';
 import 'mart_info.dart';
 
 class MartDetails extends StatefulWidget {

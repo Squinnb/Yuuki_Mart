@@ -4,5 +4,8 @@
   "settings": "Settings: ",
   "@helloWorld": {
     "description": "Hoho"
-  }
+  },
+  "organicLink": "What is organic?",
+  "navHome": "Home", "navMart": "Mart", "navUser": "User"
+
 }

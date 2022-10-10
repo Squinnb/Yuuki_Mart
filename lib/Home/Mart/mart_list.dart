@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'mart.dart';
+import '../../Store/mart.dart';
 import 'mart_filter.dart';
 import 'mart_detail_view/mart_details.dart';
 import '../../Store/redux.dart';
@@ -21,7 +21,6 @@ class _MartListState extends State<MartList> {
     setState(() {
       if (mt == "All") {
         marts = store.state.marts.martList;
-        print(marts);
       } else {
         marts = store.state.marts.martByType(mt);
       }
@@ -48,7 +47,7 @@ class _MartListState extends State<MartList> {
                       leading: Hero(
                         tag: mart.name,
                         child: Image.asset(
-                          "Images/MartType/${mart.type}.png",
+                          "Images/MartType/${mart.type.type}.png",
                           width: MediaQuery.of(context).size.width / 12,
                         ),
                       ),

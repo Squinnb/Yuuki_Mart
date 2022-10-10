@@ -8,4 +8,5 @@ ThemeData appTheme = ThemeData(
       fontWeight: FontWeight.bold,
     ),
   ),
+  fontFamily: "Comfortaa",
 );

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
-import '../Home/Mart/mart.dart';
+import 'mart.dart';
 
 @immutable
 class AppState {
   final Locale locale;
   final Marts marts = Marts();
+
   AppState(this.locale);
 }
 

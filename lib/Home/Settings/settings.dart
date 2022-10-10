@@ -6,6 +6,7 @@ class UserSett extends StatelessWidget {
   UserSett({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
+    print(AppLocalizations.of(context)!.localeName);
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
